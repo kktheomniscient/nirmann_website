@@ -1,0 +1,170 @@
+body {
+    margin: 0;
+    background-color: black;
+    color: white;
+    padding: 0;
+}
+
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.banner .content .title {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 6rem;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+p {
+    font-size: 2rem;
+}
+
+.banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url(modern_bg.jpg);
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+
+    mask-image: url(ink_mask.gif);
+    mask-size: cover;
+    mask-position: center;
+}
+
+svg {
+    scale: 2;
+}
+
+svg path {
+    fill: transparent;
+    stroke: #fff;
+    stroke-width: 1;
+    stroke-dasharray: 330;
+    stroke-dashoffset: 330;
+    animation: textAnimation 4.5s ease-in-out forwards;
+}
+
+@keyframes textAnimation {
+    0% {
+        stroke-dashoffset: 330;
+    }
+
+    80% {
+        fill: transparent;
+    }
+
+    100% {
+        fill: white;
+        stroke-dashoffset: 0;
+    }
+}
+
+.full-page {
+    height: 100vh;
+    width: 100%;
+}
+
+.list {
+    background-image: url(modern_bg3.jpg);
+    background-size: cover;
+    background-position: center;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    align-items: center;
+    justify-items: center;
+}
+
+.list-container {
+    font-size: 2rem;
+    padding: 1rem;
+}
+
+.list-container:nth-child(2) {
+    grid-column: 2/span 2;
+    grid-row: 1 / span 2;
+}
+
+.list-container:nth-child(3) {
+    grid-column: 1/span 2;
+    grid-row: 2 / span 2;
+}
+
+.list-container:nth-child(4) {
+    grid-column: 2/span 2;
+    grid-row: 3 / span 2;
+}
+
+.list-container:nth-child(5) {
+    grid-column: 1/span 2;
+    grid-row: 4 / span 2;
+}
+
+.autoBlur{
+    animation: autoBlurAnimation both;
+    animation-timeline: view();
+}
+
+@keyframes autoBlurAnimation {
+    0%{
+        filter: blur(20px);
+    }
+    45%,55%{
+        filter: blur(0px);
+    }
+    100%{
+        filter: blur(20px);
+    }
+}
+
+@media (max-width: 600px) {
+    svg {
+        scale: 1.5;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
+
+    .list{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6,1fr);
+    }
+
+    .list-container:nth-child(1) {
+        grid-column: 1/span 2;
+        grid-row: 1 / span 2;
+    }
+
+    .list-container:nth-child(2) {
+        grid-column: 1/span 2;
+        grid-row: 2 / span 2;
+    }
+
+    .list-container:nth-child(3) {
+        grid-column: 1/span 2;
+        grid-row: 3 / span 2;
+    }
+
+    .list-container:nth-child(4) {
+        grid-column: 1/span 2;
+        grid-row: 4 / span 2;
+    }
+
+    .list-container:nth-child(5) {
+        grid-column: 1/span 2;
+        grid-row: 5 / span 2;
+    }
+}

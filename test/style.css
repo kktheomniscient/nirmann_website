@@ -1,0 +1,32 @@
+body{
+    margin: 0;
+    background-color: black;
+    color: white;
+    padding: 0;
+}
+
+.banner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.banner .content .title{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 6rem;
+}
+
+.banner::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url(modern_bg.jpg);
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+
+    mask-image: url(ink_mask.gif);
+    mask-size: cover;
+    mask-position: center;
+}
