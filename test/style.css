@@ -1,32 +1,49 @@
-body{
+body,
+html {
     margin: 0;
-    background-color: black;
-    color: white;
     padding: 0;
+    background: #000;
+    /* This height determines how much total scrolling is available */
+    height: 10000px;
 }
 
-.banner{
+#zoomquilt {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+#loader {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    color: #ffa500;
+    font-family: 'Arial', sans-serif;
 }
 
-.banner .content .title{
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 6rem;
+#status {
+    width: 200px;
+    height: 4px;
+    background: #222;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    overflow: hidden;
 }
 
-.banner::before{
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: url(modern_bg.jpg);
-    background-size: cover;
-    background-position: center;
-    z-index: -1;
-
-    mask-image: url(ink_mask.gif);
-    mask-size: cover;
-    mask-position: center;
+#loadbar {
+    height: 100%;
+    width: 0%;
+    background: #ff5219;
+    transition: width 0.3s;
 }
