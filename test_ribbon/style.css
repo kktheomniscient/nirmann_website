@@ -1,55 +1,75 @@
-:root{
-    --offsetx: -320px;
-}
-
 html {
     background-color: #5d84c3;
 }
 
-/* The ribbon */
+/* ===== Ribbon Size Control ===== */
+
+.ribbon-wrap {
+    position: absolute;
+    right: 6vw;
+    top: 0;
+
+    transform: translateX(-71vw);
+    animation: slideIn 0.8s 1s forwards cubic-bezier(0.165, 0.84, 0.44, 1);
+}
 
 .ribbon {
-    width: 350px;
-    height: 99px;
-    background-color: #fff;
-    position: absolute;
-    right: 100px;
-    top: 0;
-    animation: drop forwards 0.8s 1s cubic-bezier(0.165, 0.84, 0.44, 1);
-    translate: -71vw;
+    --w: min(40vw, 22rem);
+    --h: calc(var(--w) * 0.28);
+
+    width: var(--w);
+    height: var(--h);
+
+    background: #fff;
+    position: relative;
+    /* important */
 }
 
-.ribbon:before {
-    content: '';
+/* Triangle tip */
+.ribbon::before {
+    content: "";
     position: absolute;
     z-index: 2;
-    left: 325px;
-    bottom: 25px;
-    border-left: 50px solid #fff;
-    border-right: 50px solid #fff;
-    border-bottom: 50px solid transparent;
-    rotate: -90deg;
+
+    left: calc(var(--w) * 0.93);
+    bottom: calc(var(--h) * 0.25);
+
+    border-left: calc(var(--w) * 0.14) solid #fff;
+    border-right: calc(var(--w) * 0.14) solid #fff;
+    border-bottom: calc(var(--w) * 0.14) solid transparent;
+
+    transform: rotate(-90deg);
 }
 
-.ribbon:after {
-    content: '';
-    width: 250px;
-    height: 400px;
+/* Shadow fold */
+.ribbon::after {
+    content: "";
     position: absolute;
+    inset: 0;
+
+    background: #507abd;
+
+    transform: translate(-3vw, 3vw);
     z-index: -1;
-    left: -50px;
-    bottom: -325px;
-    background-color: #507abd;
-    transform: skewY(45deg) skewX(0);
-    rotate: 90deg;
+
+    opacity: 1;
+    filter: blur(1px);
+
+    /* same ribbon silhouette */
+    clip-path: polygon(0 0,
+                100% 0,
+                93% 50%,
+                100% 100%,
+                0 100%);
 }
 
-@keyframes drop {
-    0% {
-        top: -350px;
+/* Animation */
+@keyframes slideIn {
+    from {
+        transform: translateX(-120vw);
     }
 
-    100% {
-        top: 0;
+    to {
+        transform: translateX(-71vw);
     }
 }
