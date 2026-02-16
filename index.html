@@ -4,18 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Banner Video Mask</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <section>
         <div class="banner">
+
+            <!-- Background Video -->
+            <video id="bgVideo" class="bg-video" autoplay muted playsinline loop onloadedmetadata="this.playbackRate = 1">
+                <source src="vid.mp4" type="video/mp4">
+            </video>
+
+
             <div class="content">
                 <div class="title">
+
+                    <!-- Your SVG -->
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 17.700000762939453 245.1999969482422 35.70000076293945"
                         data-asc="1.068" width="280" height="40">
-                        <defs/>
+                        <defs />
                         <g fill="#ffffff">
                             <g transform="translate(0, 0)">
                                 <path
@@ -28,35 +37,33 @@
             </div>
         </div>
     </section>
+
+
     <section>
         <div class="full-page list">
-                <div class="list-container">
-                    <div >
-                        Tracks:
-                    </div>
-                </div>
-                <div class="list-container">
-                    <div class="autoBlur">
-                        Track 1:HealthTech, Biotech and Well Being
-                    </div>
-                </div>
-                <div class="list-container">
-                    <div class="autoBlur">
-                        Track 2: Cybersecurity, Edge Computing, Privacy & Trustworthy Systems
-                    </div>
-                </div>
-                <div class="list-container">
-                    <div class="autoBlur">
-                        Track 3: Smart City, IoT & Intelligent Infrastructure
-                    </div>
-                </div>
-                <div class="list-container">
-                    <div class="autoBlur">
-                        Track 4: AI Applications, EdTech, FinTech & LegalTech
-                    </div>
-                </div>
+
+            <div class="list-container">Tracks:</div>
+
+            <div class="list-container autoBlur">
+                Track 1: HealthTech, Biotech and Well Being
+            </div>
+
+            <div class="list-container autoBlur">
+                Track 2: Cybersecurity, Edge Computing, Privacy & Trustworthy Systems
+            </div>
+
+            <div class="list-container autoBlur">
+                Track 3: Smart City, IoT & Intelligent Infrastructure
+            </div>
+
+            <div class="list-container autoBlur">
+                Track 4: AI Applications, EdTech, FinTech & LegalTech
+            </div>
+
         </div>
     </section>
+
+
     <section class="full-page">
         <div>Rule Book</div>
     </section>
